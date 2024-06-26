@@ -1,0 +1,27 @@
+body{
+    background: url('/static/images/landing.jpeg'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+} 
+P{
+    color: whitesmoke;
+    font-size: 50px;
+}
+a{
+    position: absolute;
+    right: 17%;
+    bottom: 15%;
+    text-decoration: none;
+    color: whitesmoke;
+    background-color: #2d333e;
+    border-radius: 10%;
+    font-size: 50px;
+}
+a:hover{
+    background-color: rgb(87, 180, 242);
+}
+
+#image{
+    height: auto;
+    width: 100%;
+}

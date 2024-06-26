@@ -1,0 +1,195 @@
+{% load static %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<style>
+    .container-fluid {
+    border-bottom: 2px solid #dadada;
+}
+
+#img {
+    height: 80px;
+    width: 100px;
+}
+
+#navbarNav {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.imslider {
+    width: 100%;
+    height: 551px;
+    background-image: url("/static/images/back1.jpg");
+    background-size: 100% 100%;
+    animation: changeimg 30s linear infinite;
+}
+
+@keyframes changeimg {
+    0% {
+        background-image: url('/static/images/back1.jpg');
+    }
+
+    25% {
+        background-image: url('/static/images/back2.jpg');
+    }
+
+    50% {
+        background-image: url('/static/images/back3.jpg');
+    }
+
+    75% {
+        background-image: url('/static/images/back4.webp');
+    }
+
+    100% {
+        background-image: url('/static/images/back1.jpg');
+    }
+}
+
+.logout {
+    position: absolute;
+    right: 2%;
+    top: 35%;
+}
+
+.logout-text {
+    display: none;
+    position: absolute;
+    bottom: -0px;
+    right: 0%;
+    background-color: #ffff;
+    padding: 5px;
+}
+
+.logout:hover .logout-text {
+    display: block;
+    cursor: pointer;
+}
+
+.logout-form {
+    display: inline;
+    position: relative;
+}
+
+.logout-form button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.logout-form img {
+    height: 30px;
+}
+
+
+
+
+/* #user {
+    position: absolute;
+    right: 7%;
+    cursor: pointer;
+    transition: transform .5s;
+}
+
+#user:hover {
+    transform: scale3d(1.5s);
+} */
+
+#user {
+    position: absolute;
+    right: 10%;
+    padding: 50px;
+    /* background-color: green; */
+    transition: transform .5s;
+    /* Animation */
+    /* width: 200px;
+    height: 200px; */
+    margin: 0 auto;
+}
+
+#user:hover {
+    transform: scale(1.1);
+    color: rgb(244, 183, 108);
+}
+
+.navbar {
+    background-color: #ffff;
+    border-radius: 15px;
+    font-weight: bold;
+}
+
+.navbar div li {
+    transition: transform .5s;
+}
+
+.navbar div li:hover {
+    transform: scale(1.09);
+    color: red;
+}
+
+/* .navbar-nav>li {
+    padding-left: 10px;
+    padding-right: 10px;
+} */
+/* a:active{
+    color: blue;
+}
+a:visited{
+    color: rgb(76, 76, 255);
+} */
+#img {
+    transition: transform .5s;
+}
+
+#img:hover {
+    transform: scale(1.09);
+}
+</style>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <img id="img" src="{% static 'images/logo.png' %}" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'nominees' %}">Nominees details</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'cast_vote' %}">Cast your vote</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'results' %}">Result</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'aboutus' %}">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><h5>{{ request.user.username }}!</h5></a>
+                </li>
+                <li class="nav-item logout">
+                    <form action="{% url 'logout' %}" method="post" class="logout-form">
+                        {% csrf_token %}
+                        <button type="submit">
+                            <img id="logout-img" src="{% static 'images/sign-out.png' %}" alt="Logout">
+                        </button>
+                        <span class="logout-text">Logout</span>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/static/css/footer.css">
+    <style>
+        .profile img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            border-radius: 50%;
+        }
+        .profile {
+            width: calc(100% - 40px); /* Default width for smaller screens */
+            max-width: 600px; /* Ensure it does not exceed a certain width */
+            border: 1px solid #1e1e1e;
+            border-radius: 10px;
+            margin: 20px auto; /* Center the container */
+            padding: 15px;
+            text-align: center;
+            background: linear-gradient(to left, rgb(158, 193, 245), #acf1fb);
+            box-shadow: 3px 3px red, 0em 0 .4em rgb(255, 238, 3);
+            overflow: hidden; /* Prevent overflow */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .profile h1 {
+            font-size: 1.2em;
+            margin: 10px 0;
+            word-wrap: break-word; /* Allow text to wrap */
+            width: 100%; /* Ensure it takes the full width of the container */
+            text-transform:capitalize;
+        }
+        .profile details summary {
+            cursor: pointer;
+        }
+
+        /* Media Queries for different screen sizes */
+        @media (min-width: 600px) {
+            .profile {
+                width: calc(50% - 40px);
+            }
+        }
+
+        @media (min-width: 900px) {
+            .profile {
+                width: calc(30% - 40px);
+            }
+        }
+
+        /* Optional: Keyframe animation example */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .profile {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+<div class="profile">
+    <img src="https://res.cloudinary.com/dn7sk8y8y/image/upload/v1716544911/WhatsApp_Image_2024-05-24_at_15.24.56_276bda5e_gws3ax.jpg" alt="">
+    <h1>designed and developed by khaja mubashir arsalan</h1>
+    <!-- <details>
+        <summary>&copy;copyright protected</summary>
+        <hr>
+        <p>This is a copyright &copy; protected content. If you want to use it please contact us at <b>kmarsalan124@gamil.com</b> otherwise we take legal action against you.</p>
+    </details> -->
+</div>
+<div class="profile">
+    <img src="https://res.cloudinary.com/dn7sk8y8y/image/upload/w_1000,ar_1:1,c_fill,g_auto,e_art:hokusai/v1716803195/profile.jpg_ylauu8.jpg" alt="">
+    <h1>keloth adithya</h1>
+    <!-- <details>
+        <summary>&copy;copyright protected</summary>
+        <hr>
+        <p>This is a copyright &copy; protected content. If you want to use it please contact us at <b>kmarsalan124@gamil.com</b> otherwise we take legal action against you.</p>
+    </details> -->
+</div>
+{% include "footer.html" %}
+</body>
+</html>

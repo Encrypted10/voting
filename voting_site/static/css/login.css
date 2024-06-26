@@ -1,0 +1,117 @@
+body {
+    background-position: center center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+}
+.log {
+    /* border: 2px solid; */
+    width: fit-content;
+    /* display: block; */
+    /* float:right; */
+}
+.log h1{
+    color:#1362bd;
+}
+.vid{
+    position: relative;
+    width: 100%;
+}
+
+.vid video {
+    width: 100%;
+    height: auto;
+}
+
+.chat-container {
+    position: absolute;
+    top: 25%; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust transparency as needed */
+    border-radius: 10px;
+}
+
+.chat-bubble {
+    background-color: #0084ff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.triangle {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid rgba(255, 255, 255, 0.8); /* Match the chat background color */
+}
+
+.text-overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+
+@media (max-width: 480px) {
+    body {
+        background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+    }
+    .log{
+        margin: auto;
+        width: fit-content;
+        /* border: 3px solid #73AD21; */
+        padding: 10px;
+        margin-top: 65%;
+        margin-bottom: 50%;
+      }
+}
+
+@media (min-width: 481px) and (max-width: 1024px) {
+    body {
+        background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+    }
+    .log{
+        margin: auto;
+        width: fit-content;
+        /* border: 3px solid #39d8f4; */
+        padding: 10px;
+        margin-top: 50%;
+      }
+}
+
+@media (min-width: 1025px) {
+    body {
+        background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+    }
+    .log {
+        /* border: 2px solid whitesmoke; */
+        width: fit-content;
+        display: block; 
+        float:right;
+        margin: 12% 16%;
+    }
+}
+
+
+/* form */

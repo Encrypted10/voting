@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CR Voting</title>
+    {% load static %}
+    <!-- <link rel="stylesheet" href="{% static 'landing.css' %}"> -->
+    <style>
+        body {
+            background: url('/static/images/landing.jpeg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            color: whitesmoke;
+            font-size: 4vw;
+            text-align: center;
+            margin: 0;
+        }
+
+        a {
+            text-decoration: none;
+            color: whitesmoke;
+            background-color: #2d333e;
+            border-radius: 10px;
+            font-size: 4vw;
+            padding: 10px 20px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: rgb(87, 180, 242);
+        }
+
+        @media (max-width: 480px) {
+            body {
+                background: url('https://thumbs.dreamstime.com/z/online-voting-system-human-hand-holding-phone-ballot-paper-screen-checkmark-contemporary-art-collage-online-voting-303883132.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            p {
+                font-size: 6vw;
+                /* font-size: 5vw; */
+                position: fixed;
+                left: 0;
+                top: 0;
+                color: black;
+            }
+
+            a {
+                font-size: 6vw;
+                padding: 8px 16px;
+                right: auto;
+                bottom: auto;
+                position: absolute;
+                bottom: 33%;
+                right: 25%;
+                transform: rotate(326deg);
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 1024px) {
+            body {
+                background: url('https://static.vecteezy.com/system/resources/previews/026/314/644/non_2x/top-view-of-digital-tablet-on-wood-desk-with-online-voting-on-screen-political-concept-electronic-internet-voting-customer-feedback-photo.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            p {
+                font-size: 5vw;
+                position: fixed;
+                left: 0;
+                top: 0;
+                color: black;
+            }
+
+            a {
+                font-size: 5vw;
+                padding: 10px 20px;
+                right: auto;
+                bottom: auto;
+                position: absolute;
+                right: 22%;
+                top: 60%;
+                transform: rotate(339deg);
+            }
+        }
+
+        @media (min-width: 1025px) {
+            body {
+                background: url('https://t4.ftcdn.net/jpg/05/50/34/75/360_F_550347527_a4E35eFyM3s5KhwaUMoGmqgJQf9Ub48q.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+
+            p {
+                font-size: 4vw;
+                position: fixed;
+                left: 0;
+                top: 0;
+            }
+
+            a {
+                font-size: 4vw;
+                padding: 12px 24px;
+                right: auto;
+                bottom: auto;
+                position: absolute;
+                right: 10%;
+                top: 60%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <p>YOUR VOTE IS <br> YOUR VOICE <br> SPEAK UP</p>
+    <a href="/login">Let's Go</a>
+</body>
+
+</html>

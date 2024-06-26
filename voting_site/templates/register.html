@@ -1,0 +1,213 @@
+<!-- <?php include('server.php') ?> -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="/static/login.css"> -->
+    <title>CR VOTING</title>
+    <style>
+        .container-fluid {
+            border-bottom: 2px solid #dadada;
+        }
+
+        #img {
+            height: 80px;
+            width: 100px;
+        }
+
+        #navbarNav {
+            text-align: center;
+        }
+
+        body {
+            background-position: center center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+        }
+
+        .log {
+            /* border: 2px solid; */
+            width: fit-content;
+            /* display: block; */
+            /* float:right; */
+        }
+
+        .log h1 {
+            color: #1362bd;
+        }
+
+        .vid {
+            position: relative;
+            width: 100%;
+        }
+
+        .vid video {
+            width: 100%;
+            height: auto;
+        }
+
+        .chat-container {
+            position: absolute;
+            top: 25%;
+            /* Adjust as needed */
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            width: auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Adjust transparency as needed */
+            border-radius: 10px;
+        }
+
+        .chat-bubble {
+            background-color: #0084ff;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .triangle {
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid rgba(255, 255, 255, 0.8);
+            /* Match the chat background color */
+        }
+
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+
+
+
+        @media (max-width: 480px) {
+            body {
+                background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+            }
+
+            .log {
+                margin: auto;
+                width: fit-content;
+                /* border: 3px solid #73AD21; */
+                padding: 10px;
+                margin-top: 65%;
+                margin-bottom: 50%;
+            }
+        }
+
+        @media (min-width: 481px) and (max-width: 1024px) {
+            body {
+                background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+            }
+
+            .log {
+                margin: auto;
+                width: fit-content;
+                /* border: 3px solid #39d8f4; */
+                padding: 10px;
+                margin-top: 50%;
+            }
+        }
+
+        @media (min-width: 1025px) {
+            body {
+                background-image: url('https://apicxotv.techplusmedia.com/uploads/2019/02/digitalvote.png');
+            }
+
+            .log {
+                /* border: 2px solid whitesmoke; */
+                width: fit-content;
+                display: block;
+                float: right;
+                margin: 12% 16%;
+            }
+        }
+
+
+        /* form */
+    </style>
+</head>
+
+<body>
+    <div class="vid">
+        <video autoplay muted loop>
+            <source src="/static/images/playback.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="chat-container">
+            <div class="chat-bubble">
+                Vote for a Sustainable Future
+            </div>
+            <div class="chat-bubble">
+                Empower Change with Your Vote
+            </div>
+            <div class="chat-bubble">
+                Shape Tomorrow, Vote Today
+            </div>
+            <div class="chat-bubble">
+                Your Vote Counts for Responsible Practices
+            </div>
+            <div class="chat-bubble">
+                Promote Ethical Leadership through CR Voting
+            </div>
+            <div class="chat-bubble">
+                Make Your Voice Heard for Corporate Accountability
+            </div>
+            <div class="chat-bubble">
+                Invest in Values, Vote for Responsibility
+            </div>
+            <div class="chat-bubble">
+                Together, Let's Drive Positive Impact with Our Votes
+            </div>
+            <div class="chat-bubble">
+                CR Voting: Building a Better World, One Ballot at a Time
+            </div>
+            <div class="chat-bubble">
+                Be the Change: Vote for Social and Environmental Responsibility
+            </div>
+            <div class="triangle"></div>
+            <h1>SCROLL DOWN AND Register</h1>
+        </div>
+    </div>
+    <div class="log">
+        <h1>Register FORM</h1>
+        <hr>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Register</button>
+</form>
+<a href="{% url 'login' %}">Login</a>
+
+</div>
+</body>
+
+</html>
